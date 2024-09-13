@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding and border are included in width and height */
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Adjust height as needed */
+    border: 5px solid blue; /* Blue border around header */
+    box-sizing: border-box; /* Include border in the header's size */
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; /* Ensures content appears above the video */
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2rem; /* Adjust font size as needed */
+}
+
+/* Grid layout for Images */
+.Image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.Image-item {
+    text-align: center;
+}
+
+.Image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Slightly rounded corners */
+    border: 2px solid black; /* Black border */
+}
+
+.Image-item p {
+    margin: 5px 0 0;
+}
+
+/* Media query for desktop devices */
+@media (min-width: 768px) {
+    .Image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    .Image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
